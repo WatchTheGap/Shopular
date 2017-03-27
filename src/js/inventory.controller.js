@@ -4,7 +4,7 @@
   angular.module('inventory')
     .controller('InventoryController', InventoryController);
     /**
-     * Constructs controller for populating inventory data in a table.
+     * Constructs inventory controllers for populating inventory data in a table.
      */
     function InventoryController() {
       let vm = this;

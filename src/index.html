@@ -21,24 +21,15 @@
         <th>Price</th>
         <th>Quantity</th>
         <th>Color</th>
+        <th>Final Price</th>
       </tr>
-      <tr>
-        <td>insert stuff into table data cells inside of table rows</td>
-      </tr>
-      <tr>
-        <td>insert stuff into table data cells inside of table rows</td>
-      </tr>
-      <tr>
-        <td>insert stuff into table data cells inside of table rows</td>
-      </tr>
-
 
       <tr ng-repeat='inventory in iCtrl.inventoryList'>
         <td>{{inventory.name}}</td>
-        <td>{{inventory.price}}</td>
+        <td>{{inventory.price | currency : "$" : 2}}</td>
         <td>{{inventory.quantity}}</td>
         <td>{{inventory.color}}</td>
-
+        <td>{{iCtrl.finalPrice(item)}}</td>
       </tr>
 
     </table>

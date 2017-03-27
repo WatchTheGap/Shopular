@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='inventory'>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>Shopular</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
     integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>
@@ -11,6 +11,7 @@
 
     <header>
       <h1>Shopular</h1>
+      <p>The Most Shoptacular Shop Ever.</p>
     </header>
     <main class='container'>
 
@@ -21,15 +22,15 @@
         <th>Price</th>
         <th>Quantity</th>
         <th>Color</th>
-        <th>Final Price</th>
       </tr>
 
       <tr ng-repeat='inventory in iCtrl.inventoryList'>
+
         <td>{{inventory.name}}</td>
-        <td>{{inventory.price | currency : "$" : 2}}</td>
+        <td>{{iCtrl.finalPrice(inventory) | currency : "$" : 2}}
+          <img src='/img/98350f05-sale_2.png' alt='sale tag' ng-hide='inventory.discount !== 0'></td>
         <td>{{inventory.quantity}}</td>
         <td>{{inventory.color}}</td>
-        <td>{{iCtrl.finalPrice(item)}}</td>
       </tr>
 
     </table>

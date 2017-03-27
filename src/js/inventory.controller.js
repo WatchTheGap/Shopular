@@ -22,10 +22,11 @@
         { "id": 683, "name": "pillow", "price": 27, "quantity": 10, "color": "black", "discount": 12 }
       ];
 
-      let withTax = 1.0575;
+      vm.tax = 0.0575;
       vm.finalPrice = function finalPrice(item) {
-        return ((item.price - item.discount)*withTax);
-
+        let price = (item.price - item.discount);
+        let tax = price * vm.tax;
+        return price + tax;
       };
     }
 

@@ -48,7 +48,7 @@
 
           <td>{{inventory.name}}</td>
           <td>{{iCtrl.finalPrice(inventory) | currency:"$"}}
-          <img src='/img/98350f05-sale_2.png' alt='sale tag' ng-hide='inventory.discount === 0'></td>
+          <img src='/img/98350f05-sale_2.png' alt='sale tag' ng-show='inventory.discount'></td>
           <td>{{inventory.quantity}}</td>
           <td>{{inventory.color}}</td>
         </tr>

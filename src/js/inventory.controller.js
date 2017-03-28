@@ -8,6 +8,7 @@
      */
     function InventoryController() {
       let vm = this;
+      vm.newItem = {};
 
       vm.inventoryList = [
         { "id": 2957, "name": "widget", "price": 32, "quantity": 203, "color": "red", "discount": 31 },
@@ -36,6 +37,8 @@
         let tax = price * vm.tax;
         return price + tax;
       };
+
+    
     }
 
 }());

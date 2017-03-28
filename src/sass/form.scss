@@ -1,8 +1,13 @@
 
 [ng-cloak] {
-  display:none;
+  display: none;
 }
 
-input.ng-valid.ng-touched {
+input.ng-invalid.ng-touched {
   border: 1px solid #ff0000;
+}
+
+.submitBtn {
+  width: 25%;
+  margin-top: 1em;
 }

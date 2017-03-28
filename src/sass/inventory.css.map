@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AACA,UAAW;EACT,OAAO,EAAC,IAAI;;AAGd,yBAA0B;EACxB,MAAM,EAAE,iBAAiB",
-"sources": ["form.scss"],
+"mappings": "AACA,UAAW;EACT,OAAO,EAAE,IAAI;;AAGf,2BAA4B;EAC1B,MAAM,EAAE,iBAAiB;;AAG3B,UAAW;EACT,KAAK,EAAE,GAAG;EACV,UAAU,EAAE,GAAG;;ACXjB,kBAAmB;EACjB,YAAY,EAAE,GAAG",
+"sources": ["form.scss","header.scss"],
 "names": [],
 "file": "inventory.css"
 }

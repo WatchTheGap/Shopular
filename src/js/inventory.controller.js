@@ -38,8 +38,18 @@
         return price + tax;
       };
 
+      /**
+       * Adds an item to the array containing data submitted by the user
+       * @param {Object} item The item data
+       * @return {void}
+       */
       vm.addItem = function addItem(item) {
-        if (typeof(item) !== 'object') {
+        if (typeof(item) !== 'object' ||
+           typeof(item.name) !== 'string' ||
+           typeof(item.price) !== 'number' ||
+           typeof(item.quantity) !== 'number' ||
+           typeof(item.color) !== 'string' ||
+           typeof(item.discount) !== 'number'){
           return;
         }
 
@@ -53,6 +63,9 @@
         vm.newItem = {};
       };
 
+      vm.sortColumn = function sortColumn() {
+
+      };
     }
 
 }());

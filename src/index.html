@@ -65,7 +65,7 @@
           <th><a href="#" ng-click='sortType ="color" ; sortReverse = !sortReverse'>Color</a></th>
         </tr>
 
-        <tr ng-repeat='inventory in iCtrl.inventoryList | orderBy:sortType:sortReverse'>
+        <tr ng-repeat='inventory in iCtrl.inventoryList | orderBy:"price":sortType:sortReverse'>
 
           <td>{{inventory.name}}</td>
           <td>{{iCtrl.finalPrice(inventory) | currency:"$"}}

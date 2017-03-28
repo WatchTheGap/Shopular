@@ -18,10 +18,18 @@
     </header>
 
     <main class='container'>
-      <form name='addinv' class='' >
-        <label for='nameInput'></label>
-        <input type="text" name='nameInput' required placeholder='Name'>
-
+      <form name='addinv' class='form-group' >
+        <label for='nameInput'>Item Name</label>
+        <input class='form-control' type='text' name='nameInput' required placeholder='Name'>
+        <label for='priceInput'>Item Price</label>
+        <input class='form-control'type='number' name='priceInput' min='0' required placeholder='0.00'>
+        <label for='quantityInput'>Quantity</label>
+        <input class='form-control'type='number' name='quantityInput' min='0' required placeholder='0'>
+        <label for='colorInput'>Item Color</label>
+        <input class='form-control'type='text' name='colorInput' required placeholder='Color'>
+        <label for='discountInput'>Discount</label>
+        <input class='form-control'type='number' name='discountInput' min='0' value='0'>
+        <input class='form-control'type='submit' value='Add Item'>
       </form>
 
     </main>
@@ -39,11 +47,11 @@
         <tr ng-repeat='inventory in iCtrl.inventoryList'>
 
           <td>{{inventory.name}}</td>
-          <td>{{iCtrl.finalPrice(inventory) | currency : "$" : 2}}
-            <img src='/img/98350f05-sale_2.png' alt='sale tag' ng-hide='inventory.discount === 0'></td>
-            <td>{{inventory.quantity}}</td>
-            <td>{{inventory.color}}</td>
-          </tr>
+          <td>{{iCtrl.finalPrice(inventory) | currency:"$"}}
+          <img src='/img/98350f05-sale_2.png' alt='sale tag' ng-hide='inventory.discount === 0'></td>
+          <td>{{inventory.quantity}}</td>
+          <td>{{inventory.color}}</td>
+        </tr>
 
         </table>
 

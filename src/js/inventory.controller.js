@@ -39,7 +39,6 @@
       };
 
       vm.addItem = function addItem(item) {
-        console.log('testing', item);
         if (typeof(item) !== 'object') {
           return;
         }

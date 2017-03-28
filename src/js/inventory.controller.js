@@ -63,9 +63,8 @@
         vm.newItem = {};
       };
 
-      vm.sortColumn = function sortColumn() {
-
-      };
+      vm.sortType = 'price';
+      vm.sortReverse = false;
     }
 
 }());

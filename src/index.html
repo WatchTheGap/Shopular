@@ -59,13 +59,13 @@
       <table class='table table-striped col-lg-8'>
 
         <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Color</th>
+          <th><a href="#" ng-click='sortType ="name" ; sortReverse = !sortReverse'>Name</a></th>
+          <th><a href="#" ng-click='sortType ="price" ; sortReverse = !sortReverse'>Price</a></th>
+          <th><a href="#" ng-click='sortType ="quantity" ; sortReverse = !sortReverse'>Quantity</a></th>
+          <th><a href="#" ng-click='sortType ="color" ; sortReverse = !sortReverse'>Color</a></th>
         </tr>
 
-        <tr ng-repeat='inventory in iCtrl.inventoryList | orderBy: "price"'>
+        <tr ng-repeat='inventory in iCtrl.inventoryList | orderBy:sortType:sortReverse'>
 
           <td>{{inventory.name}}</td>
           <td>{{iCtrl.finalPrice(inventory) | currency:"$"}}

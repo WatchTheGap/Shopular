@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app='inventory'>
+
   <head>
     <meta charset='utf-8'>
     <title>Shopular</title>
@@ -10,37 +11,42 @@
   <body>
 
     <header class='page-header'>
+
       <h1>Shopular</h1>
       <p>The Most Shoptacular Shop Ever.</p>
+
     </header>
+
     <main class='container'>
 
-    <table ng-controller='InventoryController as iCtrl' class='table table-striped col-lg-8'>
+      <table ng-controller='InventoryController as iCtrl' class='table table-striped col-lg-8'>
 
-      <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Color</th>
-      </tr>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Color</th>
+        </tr>
 
-      <tr ng-repeat='inventory in iCtrl.inventoryList'>
+        <tr ng-repeat='inventory in iCtrl.inventoryList'>
 
-        <td>{{inventory.name}}</td>
-        <td>{{iCtrl.finalPrice(inventory) | currency : "$" : 2}}
-          <img src='/img/98350f05-sale_2.png' alt='sale tag' ng-hide='inventory.discount !== 0'></td>
-        <td>{{inventory.quantity}}</td>
-        <td>{{inventory.color}}</td>
-      </tr>
+          <td>{{inventory.name}}</td>
+          <td>{{iCtrl.finalPrice(inventory) | currency : "$" : 2}}
+            <img src='/img/98350f05-sale_2.png' alt='sale tag' ng-hide='inventory.discount !== 0'></td>
+            <td>{{inventory.quantity}}</td>
+            <td>{{inventory.color}}</td>
+          </tr>
 
-    </table>
+        </table>
 
-  </main>
+      </main>
+
     <footer>I'm a footer!</footer>
-
 
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
     <script src='/js/inventory.module.js'></script>
     <script src='/js/inventory.controller.js'></script>
+
   </body>
+
 </html>

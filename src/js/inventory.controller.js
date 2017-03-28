@@ -38,7 +38,22 @@
         return price + tax;
       };
 
-    
+      vm.addItem = function addItem(item) {
+        console.log('testing', item);
+        if (typeof(item) !== 'object') {
+          return;
+        }
+
+        vm.inventoryList.push({
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+          color: item.color,
+          discount: item.discount
+        });
+        vm.newItem = {};
+      };
+
     }
 
 }());

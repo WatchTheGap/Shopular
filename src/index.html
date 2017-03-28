@@ -17,25 +17,29 @@
 
     </header>
 
-    <main class='container'>
-      <form name='addinv' class='form-group' >
+    <main ng-controller='InventoryController as iCtrl' class='container'>
+
+      <form name='addinv' class='form-group' ng-submit='addinv.$valid && iCtrl.addItem(iCtrl.newItem)'>
+
         <label for='nameInput'>Item Name</label>
-        <input class='form-control' type='text' name='nameInput' required placeholder='Name'>
+        <input ng-model='iCtrl.newItem.name' class='form-control' type='text' name='nameInput' required placeholder='Name'>
+
         <label for='priceInput'>Item Price</label>
-        <input class='form-control'type='number' name='priceInput' min='0' required placeholder='0.00'>
+        <input ng-model='iCtrl.newItem.price' class='form-control' type='number' name='priceInput' min='0' required placeholder='0.00'>
+
         <label for='quantityInput'>Quantity</label>
-        <input class='form-control'type='number' name='quantityInput' min='0' required placeholder='0'>
+        <input ng-model='iCtrl.newItem.quantity' class='form-control' type='number' name='quantityInput' min='0' required placeholder='0'>
+
         <label for='colorInput'>Item Color</label>
-        <input class='form-control'type='text' name='colorInput' required placeholder='Color'>
+        <input ng-model='iCtrl.newItem.color' class='form-control' type='text' name='colorInput' required placeholder='Color'>
+
         <label for='discountInput'>Discount</label>
-        <input class='form-control'type='number' name='discountInput' min='0' value='0'>
-        <input class='form-control'type='submit' value='Add Item'>
+        <input ng-model='iCtrl.newItem.discount' class='form-control' type='number' name='discountInput' min='0' value='0'>
+
+        <input class='form-control' type='submit' value='Add Item'>
       </form>
 
-    </main>
-    <main class='container'>
-
-      <table ng-controller='InventoryController as iCtrl' class='table table-striped col-lg-8'>
+      <table class='table table-striped col-lg-8'>
 
         <tr>
           <th>Name</th>

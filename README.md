@@ -15,4 +15,10 @@ Adding a shop owner interface for adding new inventory items. Focusing on two-wa
 binding between user input via form and displayed tabular data. Moving all error
 and validation to Angular instead of the browser defaults.
 
+Week 7 Day 3 Homework
+
+Replacing data stored in an array within the inventory controller with user input
+stored in and retrieved from local storage. Adding login form and login message
+to header.
+
 *HOW DO I RUN THE PROJECT IN A BROWSER???*

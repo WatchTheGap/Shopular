@@ -23,7 +23,7 @@
      * Adds a new item to the inventory
      * @return {void}
      */
-    function addItem() {
+    function addItem(item) {
       if (typeof(item) !== 'object' ||
          typeof(item.name) !== 'string' ||
          typeof(item.price) !== 'number' ||
@@ -46,7 +46,7 @@
 
     return {
       addItem: addItem,
-      getAllItems: getAllItems,
+      getAllItems: getAllItems
     };
   }
 

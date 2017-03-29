@@ -53,6 +53,8 @@
           return;
         }
 
+//add conversion to numbers - all form data is strings
+
         vm.inventoryList.push({
           name: item.name,
           price: item.price,

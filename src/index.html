@@ -11,10 +11,13 @@
 
   <body>
 
-    <header class='page-header'>
+    <header ng-controller='LoginController as logCtrl' class='page-header'>
 
       <h1>Shopular</h1>
       <p>The Most Shoptacular Shop Ever.</p>
+      <form class='form-group' name='loginform' ng-submit='loginform.$valid && '>
+
+      </form>
 
     </header>
 
@@ -87,6 +90,10 @@
     <script src='/js/inventory.module.js'></script>
     <script src='/js/inventory.controller.js'></script>
     <script src='/js/item.service.js'></script>
+    <script src='/js/user.service.js'></script>
+    <script src='/js/login.controller.js'>
+
+    </script>
 
   </body>
 

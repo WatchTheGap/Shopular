@@ -65,12 +65,12 @@
           <th><a href="#" ng-click='sortType ="color" ; sortReverse = !sortReverse'>Color</a></th>
         </tr>
 
-        <tr ng-repeat='inventory in iCtrl.inventoryList | orderBy:sortType:sortReverse'>
+        <tr ng-repeat='inventory in iCtrl.inventoryList | orderBy:iCtrl.sortType:sortReverse'>
 
           <td>{{inventory.name}}</td>
           <td>{{iCtrl.finalPrice(inventory) | currency:"$"}}
           <img src='/img/98350f05-sale_2.png' alt='sale tag' ng-show='inventory.discount'></td>
-          <td>{{inventory.quantity}}</td>
+          <td><input type='number' name='quantInput' ng-model='inventory.quantity' min='0'></td>
           <td>{{inventory.color}}</td>
         </tr>
 

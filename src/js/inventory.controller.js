@@ -3,10 +3,12 @@
 
   angular.module('inventory')
     .controller('InventoryController', InventoryController);
+
+    InventoryController.$inject = ['ItemService'];
     /**
      * Constructs inventory controllers for populating inventory data in a table.
      */
-    function InventoryController() {
+    function InventoryController(ItemService) {
       let vm = this;
       vm.newItem = {};
 
@@ -53,7 +55,7 @@
           return;
         }
 
-//add conversion to numbers - all form data is strings
+//add conversion to numbers - all form data is
 
         vm.inventoryList.push({
           name: item.name,

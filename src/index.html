@@ -23,7 +23,7 @@
                name='username' placeholder='Username'>
 
         <input type='submit' class='form-control btn btn-primary loginForm' value='Log In'>
-        <p ng-cloak ng-repeat='users in logCtrl.users'>Welcome, {{users.username}}!  You have been logged in since {{users.loginTime}}</p>
+        <p ng-cloak ng-repeat='users in logCtrl.users'>Welcome, {{users.username}}!  You have been logged in since {{users.loginTime | date: "mediumTime"}}</p>
 
       </form>
 

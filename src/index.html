@@ -22,7 +22,8 @@
         <input ng-model='logCtrl.newUser.username' class='form-control' type='text'
                name='username' placeholder='Username'>
 
-        <input type='submit' class='form-control btn btn-primary loginForm' value='Log In'>
+        <input type='submit' class='form-control btn btn-primary loginForm' value='Log In'
+               ng-click='logCtrl.removeUser(users)'>
         <p ng-cloak ng-repeat='users in logCtrl.users'>Welcome, {{users.username}}!  You have been logged in since {{users.loginTime | date: "mediumTime"}}</p>
 
       </form>

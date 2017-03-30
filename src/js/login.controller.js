@@ -31,6 +31,11 @@
       vm.newUser = {};
     };
 
+    vm.removeUser = function removeUser(user) {
+      console.log('inside controller removeUser');
+      UserService.removeUser(user);
+    };
+
   }
 
 }());

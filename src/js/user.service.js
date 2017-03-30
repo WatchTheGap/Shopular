@@ -36,9 +36,16 @@
       localStorage.setItem('users', angular.toJson(users));
 
     }
+
+    function removeUser(user) {
+      console.log('inside removeUser');
+      let index = users.indexOf(user);
+      users.splice(index, 1);
+    }
     return {
       getUsername: getUsername,
-      addUser: addUser
+      addUser: addUser,
+      removeUser: removeUser
     };
   }
 

@@ -29,7 +29,6 @@
       if (typeof(user) !== 'object') {
         return;
       }
-
       users.push({
         username: user.username,
         loginTime: Date.now()

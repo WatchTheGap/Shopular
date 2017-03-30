@@ -6,7 +6,7 @@
 
     InventoryController.$inject = ['ItemService'];
     /**
-     * Constructs inventory controllers for populating inventory data in a table.
+     * Constructs inventory controllers for populating inventory data.
      */
     function InventoryController(ItemService) {
       let vm = this;

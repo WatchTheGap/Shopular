@@ -42,6 +42,7 @@
         discount: item.discount
       });
       localStorage.setItem('items', angular.toJson(items));
+
     }
 
     return {

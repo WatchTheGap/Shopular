@@ -5,7 +5,7 @@
 
 
   /**
-   * Creates the User Service model for handling user logins
+   * Creates the User Service model for handling user getUsernames
    */
   function UserService() {
     console.log('inside UserService');
@@ -15,13 +15,13 @@
      * Retrieves user information
      * @return {Array} Array with user info objects
      */
-    function logIn() {
-      console.log('inside logIn');
+    function getUsername() {
+      console.log('inside getUsername');
       return users;
     }
 
     /**
-     * Adds a new user upon login
+     * Adds a new user when they log in
      * @param {Object} user User information containing username & timestamp
      */
     function addUser(user) {
@@ -35,9 +35,11 @@
         loginTime: Date.now()
       });
       localStorage.setItem('users', angular.toJson(users));
+
     }
     return {
-      logIn: logIn
+      getUsername: getUsername,
+      addUser: addUser
     };
   }
 

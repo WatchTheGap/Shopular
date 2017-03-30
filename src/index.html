@@ -16,13 +16,14 @@
       <h1>Shopular</h1>
       <p>The Most Shoptacular Shop Ever.</p>
 
-      <form class='form-group form-inline' name='loginform' ng-submit='loginform.$valid && logCtrl.addUser(logCtrl.newUser)'>
+      <form class='form-group form-inline' name='loginform'
+            ng-submit='loginform.$valid && logCtrl.addUser(logCtrl.newUser)'>
 
         <input ng-model='logCtrl.newUser.username' class='form-control' type='text'
                name='username' placeholder='Username'>
 
-        <input type='submit' class='form-control btn btn-primary' value='Log In'>
-        <p ng-cloak ng-repeat='user in logCtrl.users'>Welcome, {{logCtrl.username}}!  You have been logged in since {{logCtrl.loginTime}}</p>
+        <input type='submit' class='form-control btn btn-primary loginForm' value='Log In'>
+        <p ng-cloak ng-repeat='users in logCtrl.users'>Welcome, {{users.username}}!  You have been logged in since {{users.loginTime}}</p>
 
       </form>
 
@@ -49,7 +50,7 @@
 
         <label for='colorInput'>Item Color</label>
         <input ng-model='iCtrl.newItem.color' class='form-control' type='text'
-               name='colorInput' required placeholder='Color'>
+               name='colorInput' placeholder='Color'>
 
         <label for='discountInput'>Discount</label>
         <input ng-model='iCtrl.newItem.discount' class='form-control' type='number'

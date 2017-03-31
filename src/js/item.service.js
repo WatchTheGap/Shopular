@@ -25,24 +25,19 @@
      */
     function addItem(item) {
       if (typeof(item) !== 'object') {
-          //add conversion to numbers - all form data is strings
         return;
       }
-
-
       if(typeof(item.name) !== 'string' ||
       typeof(item.price) !== 'number' ||
       typeof(item.quantity) !== 'number') {
         return;
       }
-
       if(typeof(item.color) !== 'string' && item.color) {
         return;
       }
       if (typeof(item.discount) !== 'number' && item.color) {
         return;
       }
-
       if(!item.name || !item.price || !item.quantity) {
         return;
       }

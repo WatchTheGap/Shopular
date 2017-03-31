@@ -18,18 +18,15 @@
       mockItemService.getAllItems = function getAllItems() {
         return [];
       };
-
       mockItemService.addItem = function addItem() {
       };
-
-      InventoryController = $controller('InventoryController ')
-
+      InventoryController = $controller('InventoryController');
     }));
 
-    it('should add 1 + 1', function() {
-      expect(1 + 1).to.equal(2);
+    it('should be a function', function() {
+      expect(mockItemService.getAllItems).to.be.a('function');
+      expect(mockItemService.addItem).to.be.a('function');
     });
-
 
   });
 

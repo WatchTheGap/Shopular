@@ -18,7 +18,14 @@ module.exports = function(grunt) {
             'src/js/**/*.js',
             'tests/**/*.spec.js'
           ],
-          singleRun: true
+          singleRun: true,
+          preprocessors: {
+            'src/js/**/*.js': ['coverage']
+          },
+          reporters: ['dots', 'coverage'],
+          coverageReporter: {
+            type: 'text-summary'
+          }
         }
       }
     }
@@ -30,6 +37,9 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-karma');
-  grunt.registerTask('build', ['karma']);
+  grunt.loadNpmTasks('grunt-babel');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+
+  grunt.registerTask('build', ['karma', 'concat', 'babel']);
 
 };

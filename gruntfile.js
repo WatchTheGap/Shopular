@@ -17,7 +17,8 @@ module.exports = function(grunt) {
             'src/js/inventory.module.js',
             'src/js/**/*.js',
             'tests/**/*.spec.js'
-          ]
+          ],
+          singleRun: true
         }
       }
     }

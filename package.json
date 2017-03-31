@@ -2,7 +2,7 @@
   "name": "shopular",
   "version": "1.0.0",
   "description": "shopular app, homework week 7",
-  "main": "build/js/inventory.module.js",
+  "main": "src/js/inventory.module.js",
   "dependencies": {
     "angular": "^1.6.3"
   },

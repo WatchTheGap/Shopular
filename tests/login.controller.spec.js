@@ -30,6 +30,15 @@
       expect(mockUserService.removeUser).to.be.a('function');
       expect(mockUserService.getUsername).to.be.a('function');
     });
+
+    it('should be an array', function() {
+      expect(LoginController.users).to.be.an('array');
+    });
+    it('should be an object', function() {
+      expect(LoginController.newUser).to.be.an('object');
+    });
+
+
   });
 
 

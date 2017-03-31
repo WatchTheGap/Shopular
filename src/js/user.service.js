@@ -33,9 +33,17 @@
       localStorage.setItem('users', angular.toJson(users));
 
     }
-
+    /**
+     * Removes the last entry in the user array
+     * @param  {Object} user The user object to be removed
+     * @return {void}
+     */
     function removeUser(user) {
       let index = users.indexOf(user);
+      if(typeof(user) !== 'object' ||
+        users.indexOf(user) < 0) {
+        return;
+      }
       users.splice(index, 1);
     }
     return {

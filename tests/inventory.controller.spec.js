@@ -27,7 +27,12 @@
       expect(mockItemService.getAllItems).to.be.a('function');
       expect(mockItemService.addItem).to.be.a('function');
     });
-
+    it('should be an array', function() {
+      expect(InventoryController.inventoryList).to.be.an('array');
+    });
+    it('should be an object', function() {
+      expect(InventoryController.newItem).to.be.an('object');
+    });
   });
 
 }());

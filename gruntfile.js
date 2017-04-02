@@ -28,18 +28,54 @@ module.exports = function(grunt) {
           }
         }
       }
-    }
+    },
 
+    sass: {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: {
+          'main.css' : 'main.scss'
+        }
+      }
+    },
+
+    babel: {
+      all: {
+        options: {
+          sourceMap: true,
+          presets: ['es2015']
+        },
+        files: {
+          'build/js/app.js' : 'build/js/app.js'
+        }
+      }
+    },
+
+    concat: {
+      dist: {
+        src: ['src/js/inventory.module.js', 'src/js/**/*.js'],
+        dest: 'build/js/app.js'
+      }
+    },
+
+    copy: {
+
+    }
 
 
 
 
   });
 
+  // require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('build', ['karma', 'concat', 'babel']);
+  grunt.registerTask('build', ['karma', 'concat', 'babel','sass', 'copy']);
 
 };

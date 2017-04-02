@@ -24,7 +24,8 @@
 
         <input type='submit' class='form-control btn btn-primary loginForm' value='Log In'
                ng-click='logCtrl.removeUser(users)'>
-        <p ng-cloak ng-repeat='users in logCtrl.users' class='usernameDisplay'>Welcome, {{users.username}}!  You have been logged in since {{users.loginTime | date: "mediumTime"}}</p>
+        <p ng-cloak ng-repeat='users in logCtrl.users' class='usernameDisplay'>
+          Welcome, {{users.username}}!  You have been logged in since {{users.loginTime | date: "mediumTime"}}</p>
 
       </form>
 
@@ -58,7 +59,9 @@
                name='discountInput' min='0' value='0' placeholder='0'>
 
         <input class='form-control btn btn-primary submitBtn' type='submit' value='Add Item'>
+
       </form>
+
       <section class='col-lg-6'>
         <p class='alert alert-warning' ng-cloak
            ng-show='addinv.nameInput.$touched && !addinv.nameInput.$valid'>Please enter a valid item name!</p>
@@ -71,6 +74,7 @@
         <p class='alert alert-warning' ng-cloak
            ng-show='addinv.discountInput.$touched && !addinv.discountInput.$valid'>Item discount cannot be less than $0.00!</p>
       </section>
+
       <table class='table table-striped col-lg-8'>
 
         <tr>

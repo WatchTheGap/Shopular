@@ -95,7 +95,7 @@ module.exports = function(grunt) {
         ]
       }
     }
-    
+
   });
 
   // require('load-grunt-tasks')(grunt);
@@ -105,6 +105,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('build', ['jshint', 'karma', 'clean', 'concat', 'babel', 'copy', 'sass']);
 

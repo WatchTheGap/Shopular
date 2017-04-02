@@ -29,7 +29,7 @@
         return console.warn('rejected because not an object');
       }
       if(!user.username) {
-        return console.warn('rejected because no username or no timestamp');
+        return console.warn('rejected because no username');
       }
       console.log('inside addUser, after IFs');
       users.push({
@@ -37,6 +37,7 @@
         loginTime: Date.now()
       });
       localStorage.setItem('users', angular.toJson(users));
+
       console.log('after push', users);
 
     }
@@ -46,12 +47,14 @@
      * @return {void}
      */
     function removeUser(user) {
+      console.warn('inside removeUser', users);
       let index = users.indexOf(user);
       if(typeof(user) !== 'object' ||
         users.indexOf(user) < 0) {
         return;
       }
       users.splice(index, 1);
+      console.warn('after splice', users);
     }
     return {
       getUsername: getUsername,

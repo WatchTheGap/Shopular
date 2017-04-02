@@ -4,6 +4,19 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    clean: ['build/'],
+
+    jshint: {
+      appjs: {
+        options: {
+          jshintrc: '.jshintrc'
+        },
+        files: {
+          src: ['src/**/*.js']
+        }
+      }
+    },
+
     karma: {
 
       all: {
@@ -36,7 +49,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'main.css' : 'main.scss'
+          'build/styles.css' : 'src/sass/main.scss'
         }
       }
     },
@@ -61,12 +74,28 @@ module.exports = function(grunt) {
     },
 
     copy: {
-
+      html: {
+        files: [
+          {
+            cwd: 'src/',
+            src: ['*.html'],
+            dest: 'build/',
+            expand: true
+          }
+        ]
+      },
+      img: {
+        files: [
+          {
+            cwd: 'src',
+            src: ['img/*.png'],
+            dest: 'build/img/',
+            expand: true
+          }
+        ]
+      }
     }
-
-
-
-
+    
   });
 
   // require('load-grunt-tasks')(grunt);
@@ -75,7 +104,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
-  grunt.registerTask('build', ['karma', 'concat', 'babel','sass', 'copy']);
+  grunt.registerTask('build', ['jshint', 'karma', 'clean', 'concat', 'babel', 'copy', 'sass']);
 
 };

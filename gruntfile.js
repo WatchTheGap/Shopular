@@ -89,7 +89,7 @@ module.exports = function(grunt) {
           {
             cwd: 'src',
             src: ['img/*.png'],
-            dest: 'build/img/',
+            dest: 'build/',
             expand: true
           }
         ]

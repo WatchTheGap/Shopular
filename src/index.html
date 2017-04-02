@@ -24,7 +24,7 @@
 
         <input type='submit' class='form-control btn btn-primary loginForm' value='Log In'
                ng-click='logCtrl.removeUser(users)'>
-        <p ng-cloak ng-repeat='users in logCtrl.users'>Welcome, {{users.username}}!  You have been logged in since {{users.loginTime | date: "mediumTime"}}</p>
+        <p ng-cloak ng-repeat='users in logCtrl.users' class='usernameDisplay'>Welcome, {{users.username}}!  You have been logged in since {{users.loginTime | date: "mediumTime"}}</p>
 
       </form>
 
@@ -32,7 +32,7 @@
 
     <main ng-controller='InventoryController as iCtrl' class='container'>
 
-      <form name='addinv' class='form-group'
+      <form name='addinv' class='form-group col-lg-6'
             ng-submit='addinv.$valid && iCtrl.addItem(iCtrl.newItem);
             addinv.$setPristine(); addinv.$setUntouched();'
             novalidate>
@@ -59,18 +59,18 @@
 
         <input class='form-control btn btn-primary submitBtn' type='submit' value='Add Item'>
       </form>
-
-      <p class='alert alert-warning' ng-cloak
-         ng-show='addinv.nameInput.$touched && !addinv.nameInput.$valid'>Please enter a valid item name!</p>
-      <p class='alert alert-warning' ng-cloak
-         ng-show='addinv.priceInput.$touched && !addinv.priceInput.$valid'>Items must have a valid price!</p>
-      <p class='alert alert-warning' ng-cloak
-         ng-show='addinv.quantityInput.$touched && !addinv.quantityInput.$valid'>Please enter a valid quantity!</p>
-      <p class='alert alert-warning' ng-cloak
-         ng-show='addinv.colorInput.$touched && !addinv.colorInput.$valid'>Please enter an item color!</p>
-      <p class='alert alert-warning' ng-cloak
-         ng-show='addinv.discountInput.$touched && !addinv.discountInput.$valid'>Item discount cannot be less than $0.00!</p>
-
+      <section class='col-lg-6'>
+        <p class='alert alert-warning' ng-cloak
+           ng-show='addinv.nameInput.$touched && !addinv.nameInput.$valid'>Please enter a valid item name!</p>
+        <p class='alert alert-warning' ng-cloak
+           ng-show='addinv.priceInput.$touched && !addinv.priceInput.$valid'>Items must have a valid price!</p>
+        <p class='alert alert-warning' ng-cloak
+           ng-show='addinv.quantityInput.$touched && !addinv.quantityInput.$valid'>Please enter a valid quantity!</p>
+        <p class='alert alert-warning' ng-cloak
+           ng-show='addinv.colorInput.$touched && !addinv.colorInput.$valid'>Please enter an item color!</p>
+        <p class='alert alert-warning' ng-cloak
+           ng-show='addinv.discountInput.$touched && !addinv.discountInput.$valid'>Item discount cannot be less than $0.00!</p>
+      </section>
       <table class='table table-striped col-lg-8'>
 
         <tr>
@@ -93,7 +93,10 @@
 
       </main>
 
-    <footer>I'm a footer!</footer>
+    <footer>
+      <p><small>Shopular Products Inc.</small></p>
+      <p><small>Est. 2017</small></p>
+    </footer>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
     <script src='/js/app.js'></script>
 

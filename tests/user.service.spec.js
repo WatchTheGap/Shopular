@@ -32,8 +32,17 @@
       let result = UserService.getUsername();
       expect(result.length).to.equal(0);
     });
-
-
+    it('should handle an empty object', function() {
+      UserService.addUser({});
+      let result = UserService.getUsername();
+      expect(result.length).to.equal(0);
+    });
+    it('should remove an object from the array', function() {
+      UserService.addUser({username: 'username', loginTime: 99999999});
+      UserService.removeUser();
+      let result = UserService.getUsername();
+      expect(result.length).to.equal(0);
+    });
 
   });
 

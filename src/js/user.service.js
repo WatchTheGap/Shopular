@@ -9,6 +9,7 @@
    */
   function UserService() {
     let users = JSON.parse(localStorage.getItem('users')) || [];
+    console.log('inside UserService', users);
 
     /**
      * Retrieves user information
@@ -23,18 +24,20 @@
      * @param {Object} user User information containing username & timestamp
      */
     function addUser(user) {
+      console.log('inside AddUser, before IFs');
       if (typeof(user) !== 'object') {
-        return;
+        return console.warn('rejected because not an object');
       }
-      if(!user.username || !user.loginTime) {
-        return;
+      if(!user.username) {
+        return console.warn('rejected because no username or no timestamp');
       }
-
+      console.log('inside addUser, after IFs');
       users.push({
         username: user.username,
         loginTime: Date.now()
       });
       localStorage.setItem('users', angular.toJson(users));
+      console.log('after push', users);
 
     }
     /**

@@ -21,4 +21,16 @@ Replacing data stored in an array within the inventory controller with user inpu
 stored in and retrieved from local storage. Adding login form and login message
 to header.
 
-*HOW DO I RUN THE PROJECT IN A BROWSER???*
+*To Run The Build Process*
+
+1) Install the following dependencies in your terminal using npm;
+
+npm i --save-dev grunt karma mocha chai grunt-karma grunt-babel grunt-contrib-concat
+grunt-sass grunt-contrib-copy grunt-contrib-jshint grunt-contrib-clean angular-mocks
+karma-chrome-launcher karma-coverave
+
+npm i --save angular
+
+2) Run the *grunt build* command in your termial.
+
+3) Start up your http-server from the new *build/* directory.

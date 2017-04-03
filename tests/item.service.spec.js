@@ -36,6 +36,11 @@
       let result = ItemService.getAllItems();
       expect(result.length).to.equal(0);
     });
+    it('should handle an empty object', function() {
+      ItemService.addItem({});
+      let result = ItemService.getAllItems();
+      expect(result.length).to.equal(0);
+    });
 
   });
 

@@ -23,14 +23,8 @@ to header.
 
 *To Run The Build Process*
 
-1) Install the following dependencies in your terminal using npm;
+1) Run the *npm install* command in your terminal.
 
-npm i --save-dev grunt karma mocha chai grunt-karma grunt-babel grunt-contrib-concat
-grunt-sass grunt-contrib-copy grunt-contrib-jshint grunt-contrib-clean angular-mocks
-karma-chrome-launcher karma-coverave
-
-npm i --save angular
-
-2) Run the *grunt build* command in your termial.
+2) Run the *grunt build* command.
 
 3) Start up your http-server from the new *build/* directory.
